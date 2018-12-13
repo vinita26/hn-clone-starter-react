@@ -1,3 +1,15 @@
 language: node_js
 node_js:
-      - "10"
+  - 8
+  - 10
+cache:
+  yarn: true
+  directories:
+    - node_modules
+script:
+  - npm run test:lint:js
+  - npm run test:lint:css
+  - npm test
+  - yarn build
+env:
+  - CI=true
