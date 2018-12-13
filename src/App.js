@@ -7,13 +7,17 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Publicis Sapient - XT hiring challenge</h1>
+        <h1>Publicis Sapient - XT hiring challenge!</h1>
         <p>
           Edit
           {' '}
           <code>src/App.js</code>
           {' '}
-and save to reload.
+and save to reload. Refactor at will, but please do not
+          modify the entry point
+          {' '}
+          <code>index.js</code>
+.
         </p>
       </header>
     </div>
