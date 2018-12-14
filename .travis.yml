@@ -7,14 +7,6 @@ cache:
     - node_modules
 env:
   - CI=true
-before_deploy:
-  - npm install netlify-cli -g
-deploy:
-  provider: script
-  script: netlify deploy -s $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN -p --dir ./build
-  skip_cleanup: true
-  on:
-    branch: master
 jobs:
   include:
     - stage: 'Tests'
@@ -24,9 +16,14 @@ jobs:
       script: yarn test:lint:css
     - name: 'Unit Test Execution'
       script: yarn test
-    - stage: predeployment
-      name: 'Build artifacts for deployment'
-      script: ./before_deploy
     - stage: deployment
       name: 'Deploy artifacts to Netlify'
-      script: ./deploy
+      before_deploy:
+        - yarn build
+        - npm install netlify-cli -g
+      deploy:
+        provider: script
+        script: netlify deploy -s $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN -p --dir ./build
+        skip_cleanup: true
+        on:
+          branch: master
