@@ -5,11 +5,6 @@ cache:
   yarn: true
   directories:
     - node_modules
-script:
-  - npm run test:lint:js
-  - npm run test:lint:css
-  - npm test
-  - yarn build
 env:
   - CI=true
 before_deploy:
@@ -20,3 +15,18 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
+jobs:
+  include:
+    - stage: 'Tests'
+      name: 'ES Lint'
+      script: yarn test:lint:js
+    - name: 'CSS Lint'
+      script: yarn test:lint:css
+    - name: 'Unit Test Execution'
+      script: yarn test
+    - stage: predeployment
+      name: 'Build artifacts for deployment'
+      script: ./before_deploy
+    - stage: deployment
+      name: 'Deploy artifacts to Netlify'
+      script: ./deploy
