@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () => {
+const Header = ({ showLoader }) => {
     return (
         <div className="form-group">
             <table className="mainTable">

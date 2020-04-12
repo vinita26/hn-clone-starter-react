@@ -1,39 +1,110 @@
-import React, { Component } from 'react';
+import React, { useState } from "react";
 import Header from './Components/header';
 import Footer from './Components/footer';
+import News from "./Components/News";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import axios from 'axios';
 import './App.css';
 
-class App extends Component {
+const App = () => {
+  const [isLoading, setLoadingState] = useState(true);
 
-  componentDidMount() {
-    console.log('mount');
-    this.getResults();
-  }
+  const showLoader = () => {
+    setLoadingState(true);
+  };
+  const hideLoader = () => {
+    setLoadingState(false);
+  };
 
-  getResults = () => {
-    axios.get('https://hn.algolia.com/api/v1/items/1')
-      .then((response) => {
-        let result = response.data;
-        //  this.setState({ results: result });
-        console.log('result:', result);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-  }
+  return (
+    <Router>
+      <Header showLoader={showLoader} />
+      <Switch>
+        <>
+          <Route
+            exact
+            key="home"
+            path="/"
+            render={() => (
+              <News
+                isLoading={isLoading}
+                hideLoader={hideLoader}
+                showLoader={showLoader}
+              />
+            )}
+          />
+          <Route
+            key="shows"
+            path="/shows"
+            render={() => (
+              <News
+                isLoading={isLoading}
+                hideLoader={hideLoader}
+                showLoader={showLoader}
+              />
+            )}
+          />
+          <Route
+            key="ask"
+            path="/ask"
+            render={() => (
+              <News
+                isLoading={isLoading}
+                hideLoader={hideLoader}
+                showLoader={showLoader}
+              />
+            )}
+          />
+          <Route
+            key="jobs"
+            path="/jobs"
+            render={() => (
+              <News
+                isLoading={isLoading}
+                hideLoader={hideLoader}
+                showLoader={showLoader}
+              />
+            )}
+          />
 
-  render() {
-    return (
-      <div className="App" >
-        <Header />
-        <Footer />
-        {/* <header className="App-header"> */}
-        {/* </header> */}
-      </div>
-    );
-  }
-
-}
+          <Route
+            key="top"
+            path="/top"
+            render={() => (
+              <News
+                isLoading={isLoading}
+                hideLoader={hideLoader}
+                showLoader={showLoader}
+              />
+            )}
+          />
+          <Route
+            key="new"
+            path="/new"
+            render={() => (
+              <News
+                isLoading={isLoading}
+                hideLoader={hideLoader}
+                showLoader={showLoader}
+              />
+            )}
+          />
+          <Route
+            key="best"
+            path="/best"
+            render={() => (
+              <News
+                isLoading={isLoading}
+                hideLoader={hideLoader}
+                showLoader={showLoader}
+              />
+            )}
+          />
+        </>
+      </Switch>
+      <Footer />
+    </Router>
+  );
+};
 
 export default App;

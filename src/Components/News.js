@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
-import Stories from "./layouts/Stories";
-import Loader from "./layouts/Loader";
+import Stories from "./Stories";
+import Loader from "./Loader";
 
 const News = props => {
     const [state, setState] = useState([]);
