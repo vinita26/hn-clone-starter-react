@@ -1,27 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Header from './Components/header'
+import axios from 'axios';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Publicis Sapient - XT hiring challenge!!</h1>
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-and save to reload. Refactor at will, but please do not
-          modify the entry point
-          {' '}
-          <code>index.js</code>
-.
-        </p>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  componentDidMount() {
+    console.log('mount');
+    this.getResults();
+  }
+
+  getResults = () => {
+    axios.get('https://hn.algolia.com/api/v1/items/1')
+      .then((response) => {
+        let result = response.data;
+        //  this.setState({ results: result });
+        console.log('result:', result);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+
+  render() {
+    return (
+      <div className="App" >
+        <Header />
+        {/* <header className="App-header"> */}
+        {/* </header> */}
+      </div>
+    );
+  }
+
 }
 
 export default App;
