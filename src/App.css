@@ -22,7 +22,8 @@
   flex-direction: row-reverse;
 }
 
-.pageTop a {
+.pageTop a,
+.subText a {
   text-decoration: none;
 }
 

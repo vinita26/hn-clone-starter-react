@@ -6,49 +6,35 @@ const Stories = ({ state }) => {
         <>
             {state.map(
                 ({ item, author, title, score, comments_count, time, url }) => (
-                    <tr key={item}>
-                        <td style={{ padding: "0px" }}>
-                            <i
-                                className="fas fa-sort-up"
-                                style={{
-                                    fontSize: "30px",
-                                    marginTop: "16px",
-                                    padding: "0px",
-                                    marginRight: "0px"
-                                }}
-                            />
-                        </td>
-                        <td
-                            style={{
-                                padding: "0px",
-                                paddingTop: "13px",
-                                paddingRight: "15px",
-                                color: "#828282"
-                            }}
-                        >
-                            &nbsp;
-              {score}
-                        </td>
-                        <td style={{ paddingRight: "80px", fontWeight: "600" }}>
-                            <a href={url} target="_blank" rel="noopener noreferrer">
-                                {title}
-                            </a>
-                        </td>
-                        <React.Fragment className="info">
-                            <td style={{ color: "#828282" }}>
-                                <i className="fas fa-user" />{" "}
-                                <a
-                                    href={`https://news.ycombinator.com/user?id=${author}`}
-                                    target="_blank"
-                                    style={{ color: "#828282" }}
-                                    rel="noopener noreferrer"
-                                >
-                                    {author}
-                                </a>
+                    <React.Fragment>
+                        <tr key={item}>
+                            <td style={{ padding: "0px" }}>
+                                <i
+                                    className="fas fa-sort-up"
+                                    style={{
+                                        fontSize: "30px",
+                                        marginTop: "16px",
+                                        padding: "0px",
+                                        marginRight: "0px"
+                                    }}
+                                />
                             </td>
-                            <td style={{ color: "#828282" }}>
-                                <i className="fas fa-globe" />{" "}
-                                <a
+                            {/* <td
+                                style={{
+                                    padding: "0px",
+                                    paddingTop: "13px",
+                                    paddingRight: "15px",
+                                    color: "#828282"
+                                }}
+                            >
+                                &nbsp;
+              {score}
+                            </td> */}
+                            <td style={{ paddingRight: "80px", fontWeight: "600" }}>
+                                <a href={url} target="_blank" rel="noopener noreferrer">
+                                    {title}
+                                </a>(
+                            <a
                                     href={`https://${
                                         url
                                             .replace("http://", "")
@@ -64,24 +50,42 @@ const Stories = ({ state }) => {
                                         .replace("https://", "")
                                         .split(/[/?#]/)[0]
                                         .replace("www.", "")}
+                                </a>)
+                        </td>
+
+                        </tr>
+                        <tr>
+                            {/* <td colSpan="2"></td> */}
+                            <td className="subText">
+                                <span className="score">{score}</span> points by
+                                <a
+                                    href={`https://news.ycombinator.com/user?id=${author}`}
+                                    target="_blank"
+                                    style={{ color: "#828282" }}
+                                    rel="noopener noreferrer"
+                                >
+                                    &nbsp;{author}
                                 </a>
-                            </td>
-                            <td style={{ color: "#828282" }}>
-                                <i className="fas fa-clock"> {timeago(time * 1000)}</i>
-                            </td>
-                            <td style={{ color: "#828282" }}>
-                                <i className="far fa-comment-alt" />{" "}
+                                <span className="age">&nbsp;{timeago(time * 1000)}</span> |
+                                <a
+                                    href={`https://news.ycombinator.com/user?id=${author}`}
+                                    target="_blank"
+                                    style={{ color: "#828282" }}
+                                    rel="noopener noreferrer"
+                                >
+                                    &nbsp;hide
+                                </a> |
                                 <a
                                     href={`https://news.ycombinator.com/item?id=${item}`}
                                     target="_blank"
                                     style={{ color: "#828282" }}
                                     rel="noopener noreferrer"
                                 >
-                                    {comments_count}
+                                    &nbsp;{comments_count} comments
                                 </a>
                             </td>
-                        </React.Fragment>
-                    </tr>
+                        </tr>
+                    </React.Fragment>
                 )
             )}
         </>

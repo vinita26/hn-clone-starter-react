@@ -3,7 +3,6 @@ import Header from './Components/header';
 import Footer from './Components/footer';
 import News from "./Components/News";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
-import axios from 'axios';
 import './App.css';
 
 const App = () => {
