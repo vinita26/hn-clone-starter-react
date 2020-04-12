@@ -134,6 +134,7 @@ const News = props => {
                                 </tbody>
                             </table>
                         </div>
+                        <div className="more-space"></div>
                         <div className="text-center m-1">
                             <span className="more-btn " onClick={showMoreContent}>
                                 More

@@ -22,11 +22,26 @@
   flex-direction: row-reverse;
 }
 
-.pageTop a,
-.subText a {
+.container-fluid a {
   text-decoration: none;
 }
 
 .hnname {
   margin-right: 5px;
+}
+
+.subText {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 7pt;
+  color: #828282;
+}
+
+.title {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  color: #828282;
+}
+
+.more-space {
+  height: 10px;
 }

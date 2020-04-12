@@ -8,32 +8,24 @@ const Stories = ({ state }) => {
                 ({ item, author, title, score, comments_count, time, url }) => (
                     <React.Fragment>
                         <tr key={item}>
-                            <td style={{ padding: "0px" }}>
-                                <i
+                            <td className="upVote" style={{ padding: "5px" }}>
+                                <a
                                     className="fas fa-sort-up"
                                     style={{
+                                        width: "10px",
+                                        height: "10px",
                                         fontSize: "30px",
-                                        marginTop: "16px",
+                                        margin: "3px 2px 6px",
                                         padding: "0px",
-                                        marginRight: "0px"
+                                        backgroundSize: "10px"
                                     }}
                                 />
                             </td>
-                            {/* <td
-                                style={{
-                                    padding: "0px",
-                                    paddingTop: "13px",
-                                    paddingRight: "15px",
-                                    color: "#828282"
-                                }}
-                            >
-                                &nbsp;
-              {score}
-                            </td> */}
-                            <td style={{ paddingRight: "80px", fontWeight: "600" }}>
+
+                            <td className="title" style={{ paddingRight: "80px", fontWeight: "600" }}>
                                 <a href={url} target="_blank" rel="noopener noreferrer">
                                     {title}
-                                </a>(
+                                </a>&nbsp;(
                             <a
                                     href={`https://${
                                         url
@@ -55,7 +47,7 @@ const Stories = ({ state }) => {
 
                         </tr>
                         <tr>
-                            {/* <td colSpan="2"></td> */}
+                            <td colSpan="1"></td>
                             <td className="subText">
                                 <span className="score">{score}</span> points by
                                 <a
