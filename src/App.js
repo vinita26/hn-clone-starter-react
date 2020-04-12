@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Header from './Components/header'
+import Header from './Components/header';
+import Footer from './Components/footer';
 import axios from 'axios';
 import './App.css';
 
@@ -26,6 +27,7 @@ class App extends Component {
     return (
       <div className="App" >
         <Header />
+        <Footer />
         {/* <header className="App-header"> */}
         {/* </header> */}
       </div>
