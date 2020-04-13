@@ -4,6 +4,9 @@ import $ from 'jquery';
 
 const Stories = ({ state }) => {
 
+    const hideNews = localStorage.getItem('hideNews');
+    localStorage.setItem('hideNews', 'false');
+
     const incrementNewsScore = () => {
         state.score = state.score + 1;
         console.log('add score', state.score);
@@ -11,9 +14,9 @@ const Stories = ({ state }) => {
 
     const hideNewsDiv = () => {
 
-        const showNews = localStorage.getItem('showNews');
+        // const hideNews = localStorage.getItem('hideNews');
 
-        if (showNews === 'false') {
+        if (hideNews === 'false') {
             $('.newsRow').hide();
         }
 
@@ -21,7 +24,7 @@ const Stories = ({ state }) => {
             $('.hideText').on('click', function () {
                 console.log('hide news is clicked', '')
                 $('.newsRow').fadeOut('slow');
-                localStorage.setItem('showNews', 'false');
+                localStorage.setItem('hideNews', 'true');
             });
         });
     }

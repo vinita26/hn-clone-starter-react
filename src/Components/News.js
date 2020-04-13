@@ -9,9 +9,6 @@ const News = props => {
     const [count, setCount] = useState(21);
     const [isLoading, setLoading] = useState(false);
 
-    //a global index to keep track of the all showed items
-
-    //setting different api params for different routes
     const checkRoute = () => {
         let route;
         switch (props.location.pathname) {
@@ -19,28 +16,8 @@ const News = props => {
                 route = "/topstories";
                 break;
 
-            case "/shows":
-                route = "/showstories";
-                break;
-
-            case "/ask":
-                route = "/askstories";
-                break;
-
-            case "/jobs":
-                route = "/jobstories";
-                break;
-
-            case "/top":
-                route = "/topstories";
-                break;
-
             case "/new":
                 route = "/newstories";
-                break;
-
-            case "/best":
-                route = "/beststories";
                 break;
 
             default:

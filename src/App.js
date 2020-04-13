@@ -17,13 +17,6 @@ const App = () => {
 
   return (
     <Router>
-      {/* <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center"
-        }}
-      > */}
       <center>
         <table id="hnmain">
           <tbody>
@@ -46,51 +39,6 @@ const App = () => {
                     )}
                   />
                   <Route
-                    key="shows"
-                    path="/shows"
-                    render={() => (
-                      <News
-                        isLoading={isLoading}
-                        hideLoader={hideLoader}
-                        showLoader={showLoader}
-                      />
-                    )}
-                  />
-                  <Route
-                    key="ask"
-                    path="/ask"
-                    render={() => (
-                      <News
-                        isLoading={isLoading}
-                        hideLoader={hideLoader}
-                        showLoader={showLoader}
-                      />
-                    )}
-                  />
-                  <Route
-                    key="jobs"
-                    path="/jobs"
-                    render={() => (
-                      <News
-                        isLoading={isLoading}
-                        hideLoader={hideLoader}
-                        showLoader={showLoader}
-                      />
-                    )}
-                  />
-
-                  <Route
-                    key="top"
-                    path="/top"
-                    render={() => (
-                      <News
-                        isLoading={isLoading}
-                        hideLoader={hideLoader}
-                        showLoader={showLoader}
-                      />
-                    )}
-                  />
-                  <Route
                     key="new"
                     path="/new"
                     render={() => (
@@ -101,17 +49,7 @@ const App = () => {
                       />
                     )}
                   />
-                  <Route
-                    key="best"
-                    path="/best"
-                    render={() => (
-                      <News
-                        isLoading={isLoading}
-                        hideLoader={hideLoader}
-                        showLoader={showLoader}
-                      />
-                    )}
-                  />
+
                 </>
               </Switch>
             </tr>
