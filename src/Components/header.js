@@ -6,16 +6,16 @@ const Header = ({ showLoader }) => {
         <table className="mainTable" border="0" cellPadding="0" cellSpacing="0">
             <tbody>
                 <tr className="main-table-header">
-                    <td >
+                    <td style={{ width: "18px", paddingRight: "24px", }}>
                         <img src="https://news.ycombinator.com/y18.gif" alt="logo" style={{ border: "1px white solid", width: "18px", height: "18px", }}></img>
                     </td>
                     <td className="main-headings">
                         <span className="pageTop">
                             <b className="hnname">
-                                <a href="">Hacker News</a>
+                                <a href="">top&nbsp;</a>|
                             </b>
-                            <a> new </a>
-                                |
+                            <a className="topRoute"> new </a>
+                            {/* |
                                 <a> threads </a>
                                 |
                                 <a> past </a>
@@ -28,19 +28,19 @@ const Header = ({ showLoader }) => {
                                 |
                                 <a> jobs </a>
                                 |
-                                <a> submit </a>
+                                <a> submit </a> */}
                         </span>
                     </td>
-                    <td className="user-profile-settings">
+                    {/* <td className="user-profile-settings">
                         <span>username(1)</span> |&nbsp;
                         <span>logout</span>
-                    </td>
+                    </td> */}
                 </tr>
                 <tr>
 
                 </tr>
             </tbody>
-        </table>
+        </table >
 
     );
 }

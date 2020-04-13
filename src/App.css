@@ -20,15 +20,16 @@ a {
   height: 10px;
 }
 
-.pageTop {
+.topRoute {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 10pt;
-  color: #222222b6;
-  font-weight: 400;
+  color: #222;
+  font-weight: 800;
 }
 
-.hnname {
+.hnname a {
   margin-right: 5px;
+  color: white;
 }
 
 .newsRow:nth-child(odd) {
@@ -39,10 +40,10 @@ a {
   background-color: #d3d3d3;
 }
 
-.user-profile-settings {
+/* .user-profile-settings {
   text-align: right;
   padding-right: 4px;
-}
+} */
 
 .container-fluid a {
   color: #828282;
