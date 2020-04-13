@@ -10,20 +10,7 @@ const News = props => {
     const [isLoading, setLoading] = useState(false);
 
     const checkRoute = () => {
-        let route;
-        switch (props.location.pathname) {
-            case "/":
-                route = "/topstories";
-                break;
-
-            case "/new":
-                route = "/newstories";
-                break;
-
-            default:
-                route = "/notFound";
-                break;
-        }
+        let route = "/topstories";
         return route;
     };
     const formatComponent = (item, callback) => {
@@ -31,7 +18,6 @@ const News = props => {
         callback();
     };
     useEffect(() => {
-        // function executes here ,calling two async function
         getData(checkRoute(), 0, 20).then(arr => {
             getDeatils(arr).then(item =>
                 formatComponent(item, () => {
@@ -41,7 +27,6 @@ const News = props => {
         });
     }, []);
 
-    //getting all the data ids and storing them in an array
     const getData = async function (category, start, end) {
         const arr = [];
         try {
@@ -55,7 +40,6 @@ const News = props => {
         return arr;
     };
 
-    //fetching data from those ids and storing only the necessary datas in an array
     const getDeatils = async function (arr) {
         const promises = arr.map(async item => {
             const { data } = await axios.get(
@@ -91,7 +75,6 @@ const News = props => {
         });
     };
 
-    //return statement
     return (
         <>
             {props.isLoading ? (
@@ -113,9 +96,9 @@ const News = props => {
                         </div>
                         <div className="more-space"></div>
                         <div className="title">
-                            <a href="" className="more-btn" onClick={showMoreContent}>
+                            <span className="more-btn" onClick={showMoreContent}>
                                 More
-            </a>
+            </span>
                         </div>&nbsp;&nbsp;
                         <div className="divider"></div>
                         &nbsp;&nbsp;
@@ -125,4 +108,5 @@ const News = props => {
     );
 };
 
-export default withRouter(News);
+export default News;
+// export default withRouter(News);

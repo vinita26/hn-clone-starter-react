@@ -16,55 +16,57 @@ const App = () => {
   };
 
   return (
-    <Router>
-      <center>
-        <table id="hnmain">
-          <tbody>
-            <tr>
-              <Header showLoader={showLoader} />
-            </tr>
-            <tr>
-              <Switch>
-                <>
-                  <Route
-                    exact
-                    key="home"
-                    path="/"
-                    render={() => (
-                      <News
-                        isLoading={isLoading}
-                        hideLoader={hideLoader}
-                        showLoader={showLoader}
-                      />
-                    )}
+    // <Router>
+    <center>
+      <table id="hnmain">
+        <tbody>
+          <tr>
+            <Header showLoader={showLoader} />
+          </tr>
+          <tr>
+            <News
+              isLoading={isLoading}
+              hideLoader={hideLoader}
+              showLoader={showLoader}
+            />
+            {/* <Switch> */}
+            {/* <>
+              <Route
+                exact
+                key="home"
+                path="/"
+                render={() => (
+                  <News
+                    isLoading={isLoading}
+                    hideLoader={hideLoader}
+                    showLoader={showLoader}
                   />
-                  <Route
-                    key="new"
-                    path="/new"
-                    render={() => (
-                      <News
-                        isLoading={isLoading}
-                        hideLoader={hideLoader}
-                        showLoader={showLoader}
-                      />
-                    )}
+                )}
+              />
+              <Route
+                key="new"
+                path="/new"
+                render={() => (
+                  <News
+                    isLoading={isLoading}
+                    hideLoader={hideLoader}
+                    showLoader={showLoader}
                   />
+                )}
+              />
 
-                </>
-              </Switch>
-            </tr>
-            <tr>
-              <Footer />
-            </tr>
-          </tbody>
-        </table>
-      </center>
+            </> */}
+            {/* </Switch> */}
+          </tr>
+          <tr>
+            <Footer />
+          </tr>
+        </tbody>
+      </table>
+    </center>
 
 
-
-      {/* </div> */}
-
-    </Router>
+    // </Router>
   );
 };
 
