@@ -139,7 +139,9 @@ const News = props => {
                             <span className="more-btn " onClick={showMoreContent}>
                                 More
             </span>
-                        </div>
+                        </div>&nbsp;&nbsp;
+                        <div className="divider"></div>
+                        &nbsp;&nbsp;
                     </>
                 )}
         </>

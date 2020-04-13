@@ -17,91 +17,115 @@ const App = () => {
 
   return (
     <Router>
-      <Header showLoader={showLoader} />
-      <Switch>
-        <>
-          <Route
-            exact
-            key="home"
-            path="/"
-            render={() => (
-              <News
-                isLoading={isLoading}
-                hideLoader={hideLoader}
-                showLoader={showLoader}
-              />
-            )}
-          />
-          <Route
-            key="shows"
-            path="/shows"
-            render={() => (
-              <News
-                isLoading={isLoading}
-                hideLoader={hideLoader}
-                showLoader={showLoader}
-              />
-            )}
-          />
-          <Route
-            key="ask"
-            path="/ask"
-            render={() => (
-              <News
-                isLoading={isLoading}
-                hideLoader={hideLoader}
-                showLoader={showLoader}
-              />
-            )}
-          />
-          <Route
-            key="jobs"
-            path="/jobs"
-            render={() => (
-              <News
-                isLoading={isLoading}
-                hideLoader={hideLoader}
-                showLoader={showLoader}
-              />
-            )}
-          />
+      {/* <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      > */}
+      <center>
+        <table>
+          <tbody>
+            <tr>
+              <Header showLoader={showLoader} />
+            </tr>
+            <tr>
+              <Switch>
+                <>
+                  <Route
+                    exact
+                    key="home"
+                    path="/"
+                    render={() => (
+                      <News
+                        isLoading={isLoading}
+                        hideLoader={hideLoader}
+                        showLoader={showLoader}
+                      />
+                    )}
+                  />
+                  <Route
+                    key="shows"
+                    path="/shows"
+                    render={() => (
+                      <News
+                        isLoading={isLoading}
+                        hideLoader={hideLoader}
+                        showLoader={showLoader}
+                      />
+                    )}
+                  />
+                  <Route
+                    key="ask"
+                    path="/ask"
+                    render={() => (
+                      <News
+                        isLoading={isLoading}
+                        hideLoader={hideLoader}
+                        showLoader={showLoader}
+                      />
+                    )}
+                  />
+                  <Route
+                    key="jobs"
+                    path="/jobs"
+                    render={() => (
+                      <News
+                        isLoading={isLoading}
+                        hideLoader={hideLoader}
+                        showLoader={showLoader}
+                      />
+                    )}
+                  />
 
-          <Route
-            key="top"
-            path="/top"
-            render={() => (
-              <News
-                isLoading={isLoading}
-                hideLoader={hideLoader}
-                showLoader={showLoader}
-              />
-            )}
-          />
-          <Route
-            key="new"
-            path="/new"
-            render={() => (
-              <News
-                isLoading={isLoading}
-                hideLoader={hideLoader}
-                showLoader={showLoader}
-              />
-            )}
-          />
-          <Route
-            key="best"
-            path="/best"
-            render={() => (
-              <News
-                isLoading={isLoading}
-                hideLoader={hideLoader}
-                showLoader={showLoader}
-              />
-            )}
-          />
-        </>
-      </Switch>
-      <Footer />
+                  <Route
+                    key="top"
+                    path="/top"
+                    render={() => (
+                      <News
+                        isLoading={isLoading}
+                        hideLoader={hideLoader}
+                        showLoader={showLoader}
+                      />
+                    )}
+                  />
+                  <Route
+                    key="new"
+                    path="/new"
+                    render={() => (
+                      <News
+                        isLoading={isLoading}
+                        hideLoader={hideLoader}
+                        showLoader={showLoader}
+                      />
+                    )}
+                  />
+                  <Route
+                    key="best"
+                    path="/best"
+                    render={() => (
+                      <News
+                        isLoading={isLoading}
+                        hideLoader={hideLoader}
+                        showLoader={showLoader}
+                      />
+                    )}
+                  />
+                </>
+              </Switch>
+            </tr>
+            <tr>
+              <Footer />
+            </tr>
+          </tbody>
+        </table>
+      </center>
+
+
+
+      {/* </div> */}
+
     </Router>
   );
 };

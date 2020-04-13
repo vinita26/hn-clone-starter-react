@@ -24,6 +24,7 @@
 
 .container-fluid a {
   text-decoration: none;
+  color: #828282;
 }
 
 .hnname {
@@ -44,4 +45,9 @@
 
 .more-space {
   height: 10px;
+}
+
+.divider {
+  height: 2px;
+  background-color: #fd6721;
 }

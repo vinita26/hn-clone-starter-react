@@ -11,6 +11,7 @@ const Stories = ({ state }) => {
                             <td className="upVote" style={{ padding: "5px" }}>
                                 <a
                                     className="fas fa-sort-up"
+                                    href=""
                                     style={{
                                         width: "10px",
                                         height: "10px",

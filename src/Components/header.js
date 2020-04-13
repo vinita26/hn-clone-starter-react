@@ -7,7 +7,7 @@ const Header = ({ showLoader }) => {
                 <tbody>
                     <tr className="main-table-header">
                         <td>
-                            <img src="https://news.ycombinator.com/y18.gif"></img>
+                            <img src="https://news.ycombinator.com/y18.gif" alt="logo" style={{ border: "1px white solid", width: "18px", height: "18px", }}></img>
                         </td>
                         <td className="main-headings">
                             <span className="pageTop">
