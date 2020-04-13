@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <div className="footer">
+        <td className="footer">
             <center>
                 <span>
                     <a href="https://news.ycombinator.com/newsguidelines.html"> Guidelines </a>|
@@ -25,7 +25,7 @@ const Footer = () => {
             </center>
 
 
-        </div>
+        </td>
     );
 };
 

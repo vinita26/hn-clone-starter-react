@@ -2,11 +2,16 @@ import React from "react";
 import timeago from "epoch-timeago";
 
 const Stories = ({ state }) => {
+
+    const incrementNewsScore = () => {
+        state.score = state.score + 1;
+        console.log('add score', state.score);
+    }
     return (
         <>
             {state.map(
                 ({ item, author, title, score, comments_count, time, url }) => (
-                    <React.Fragment>
+                    <React.Fragment key={item} >
                         <tr key={item} className="newsRow">
                             <td className="comments">
                                 <span className="score">{comments_count}</span>
@@ -16,7 +21,7 @@ const Stories = ({ state }) => {
                             <td className="upVotes">
                                 <span className="score">{score}</span>
                             </td>
-                            <td className="upVoteIcon" style={{ padding: "5px" }}>
+                            <td className="upVoteIcon" style={{ padding: "5px" }} onClick={incrementNewsScore}>
                                 <a
                                     className="fas fa-sort-up"
                                     href=""

@@ -3,7 +3,7 @@ import React from 'react';
 const Header = ({ showLoader }) => {
     return (
 
-        <table className="mainTable" border="0" cellpadding="0" cellSpacing="0">
+        <table className="mainTable" border="0" cellPadding="0" cellSpacing="0">
             <tbody>
                 <tr className="main-table-header">
                     <td >
@@ -32,8 +32,8 @@ const Header = ({ showLoader }) => {
                         </span>
                     </td>
                     <td className="user-profile-settings">
-                        <td>username(1)</td>
-                        <td>logout</td>
+                        <span>username(1)</span> |&nbsp;
+                        <span>logout</span>
                     </td>
                 </tr>
                 <tr>
