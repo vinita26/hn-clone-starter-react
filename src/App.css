@@ -55,7 +55,8 @@ a {
   color: #3a3737;
 }
 
-.subText {
+.subText,
+.hideText {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 7pt;
   color: #828282;
@@ -83,4 +84,9 @@ a {
 
 table {
   border-spacing: 0;
+}
+
+.more-btn {
+  color: #fd6721;
+  padding-left: 100px;
 }

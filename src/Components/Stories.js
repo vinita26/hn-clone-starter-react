@@ -1,5 +1,6 @@
 import React from "react";
 import timeago from "epoch-timeago";
+import $ from 'jquery';
 
 const Stories = ({ state }) => {
 
@@ -7,6 +8,24 @@ const Stories = ({ state }) => {
         state.score = state.score + 1;
         console.log('add score', state.score);
     }
+
+    const hideNewsDiv = () => {
+
+        const showNews = localStorage.getItem('showNews');
+
+        if (showNews === 'false') {
+            $('.newsRow').hide();
+        }
+
+        $(document).ready(function () {
+            $('.hideText').on('click', function () {
+                console.log('hide news is clicked', '')
+                $('.newsRow').fadeOut('slow');
+                localStorage.setItem('showNews', 'false');
+            });
+        });
+    }
+
     return (
         <>
             {state.map(
@@ -62,15 +81,16 @@ const Stories = ({ state }) => {
                                     {author}
                                 </a>
                                 <span className="age">&nbsp;{timeago(time * 1000)}</span>
-                                <a
-                                    href={`https://news.ycombinator.com/user?id=${author}`}
+                                <span
+                                    //href={`https://news.ycombinator.com/user?id=${author}`}
                                     target="_blank"
                                     style={{ color: "#383434", }}
                                     rel="noopener noreferrer"
-                                    className="subText"
+                                    className="hideText"
+                                    onClick={hideNewsDiv}
                                 >
                                     &nbsp;[hide]
-                            </a>
+                            </span>
 
                             </td>
                         </tr>
