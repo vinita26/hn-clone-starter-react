@@ -25,7 +25,7 @@ const App = () => {
         }}
       > */}
       <center>
-        <table>
+        <table id="hnmain">
           <tbody>
             <tr>
               <Header showLoader={showLoader} />

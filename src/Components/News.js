@@ -135,10 +135,10 @@ const News = props => {
                             </table>
                         </div>
                         <div className="more-space"></div>
-                        <div className="text-center m-1">
-                            <span className="more-btn " onClick={showMoreContent}>
+                        <div className="title">
+                            <a href="" className="more-btn" onClick={showMoreContent}>
                                 More
-            </span>
+            </a>
                         </div>&nbsp;&nbsp;
                         <div className="divider"></div>
                         &nbsp;&nbsp;

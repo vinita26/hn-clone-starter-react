@@ -2,19 +2,19 @@ import React from 'react';
 
 const Header = ({ showLoader }) => {
     return (
-        <div className="form-group">
-            <table className="mainTable">
-                <tbody>
-                    <tr className="main-table-header">
-                        <td>
-                            <img src="https://news.ycombinator.com/y18.gif" alt="logo" style={{ border: "1px white solid", width: "18px", height: "18px", }}></img>
-                        </td>
-                        <td className="main-headings">
-                            <span className="pageTop">
-                                <b className="hnname">
-                                    <a href="">Hacker News</a>
-                                </b>
-                                <a> new </a>
+
+        <table className="mainTable" border="0" cellpadding="0" cellSpacing="0">
+            <tbody>
+                <tr className="main-table-header">
+                    <td >
+                        <img src="https://news.ycombinator.com/y18.gif" alt="logo" style={{ border: "1px white solid", width: "18px", height: "18px", }}></img>
+                    </td>
+                    <td className="main-headings">
+                        <span className="pageTop">
+                            <b className="hnname">
+                                <a href="">Hacker News</a>
+                            </b>
+                            <a> new </a>
                                 |
                                 <a> threads </a>
                                 |
@@ -29,19 +29,19 @@ const Header = ({ showLoader }) => {
                                 <a> jobs </a>
                                 |
                                 <a> submit </a>
-                            </span>
-                        </td>
-                        <td className="user-profile-settings">
-                            <td>username(1)</td>
-                            <td>logout</td>
-                        </td>
-                    </tr>
-                    <tr>
+                        </span>
+                    </td>
+                    <td className="user-profile-settings">
+                        <td>username(1)</td>
+                        <td>logout</td>
+                    </td>
+                </tr>
+                <tr>
 
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                </tr>
+            </tbody>
+        </table>
+
     );
 }
 
