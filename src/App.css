@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-#hnmain a {
+a {
   text-decoration: none;
 }
 
@@ -31,6 +31,14 @@
   margin-right: 5px;
 }
 
+.newsRow:nth-child(odd) {
+  background-color: #fff8dc;
+}
+
+.newsRow:nth-child(even) {
+  background-color: #d3d3d3;
+}
+
 .user-profile-settings {
   text-align: right;
   padding-right: 4px;
@@ -40,16 +48,22 @@
   color: #828282;
 }
 
+.container-fluid .title {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  color: #3a3737;
+}
+
 .subText {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 7pt;
   color: #828282;
 }
 
-.container-fluid .title a{
+.age {
+  color: rgb(130, 130, 130);
   font-family: Verdana, Geneva, sans-serif;
-  font-size: 10pt;
-  color: #554b4b;
+  font-size: 7pt;
 }
 
 .more-space {
@@ -64,4 +78,8 @@
 .footer a {
   color: #554b4b;
   font-size: 10pt;
+}
+
+table {
+  border-spacing: 0;
 }

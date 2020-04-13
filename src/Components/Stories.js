@@ -7,26 +7,26 @@ const Stories = ({ state }) => {
             {state.map(
                 ({ item, author, title, score, comments_count, time, url }) => (
                     <React.Fragment>
-                        <tr key={item}>
-                            <td className="upVote" style={{ padding: "5px" }}>
+                        <tr key={item} className="newsRow">
+                            <td className="comments">
+                                <span className="score">{comments_count}</span>
+                            </td>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            {/* <td colSpan="2"></td> */}
+                            <td className="upVotes">
+                                <span className="score">{score}</span>
+                            </td>
+                            <td className="upVoteIcon" style={{ padding: "5px" }}>
                                 <a
                                     className="fas fa-sort-up"
                                     href=""
-                                    style={{
-                                        width: "10px",
-                                        height: "10px",
-                                        fontSize: "30px",
-                                        margin: "3px 2px 6px",
-                                        padding: "0px",
-                                        backgroundSize: "10px"
-                                    }}
                                 />
                             </td>
 
-                            <td className="title" style={{ paddingRight: "80px", fontWeight: "600" }}>
-                                <a href={url} target="_blank" rel="noopener noreferrer">
+                            <td style={{ paddingRight: "80px", fontWeight: "600" }}>
+                                <a href={url} target="_blank" rel="noopener noreferrer" className="title">
                                     {title}
-                                </a>&nbsp;(
+                                </a>&nbsp;
                             <a
                                     href={`https://${
                                         url
@@ -37,47 +37,39 @@ const Stories = ({ state }) => {
                                     target="_blank"
                                     style={{ color: "#828282" }}
                                     rel="noopener noreferrer"
-                                >
+                                    className="subText"
+                                >(
                                     {url
                                         .replace("http://", "")
                                         .replace("https://", "")
                                         .split(/[/?#]/)[0]
-                                        .replace("www.", "")}
-                                </a>)
-                        </td>
+                                        .replace("www.", "")})&nbsp;by&nbsp;
+                                </a>
 
-                        </tr>
-                        <tr>
-                            <td colSpan="1"></td>
-                            <td className="subText">
-                                <span className="score">{score}</span> points by
+
                                 <a
                                     href={`https://news.ycombinator.com/user?id=${author}`}
                                     target="_blank"
-                                    style={{ color: "#828282" }}
+                                    style={{ color: "#383434", }}
                                     rel="noopener noreferrer"
+                                    className="subText"
                                 >
-                                    &nbsp;{author}
+                                    {author}
                                 </a>
-                                <span className="age">&nbsp;{timeago(time * 1000)}</span> |
+                                <span className="age">&nbsp;{timeago(time * 1000)}</span>
                                 <a
                                     href={`https://news.ycombinator.com/user?id=${author}`}
                                     target="_blank"
-                                    style={{ color: "#828282" }}
+                                    style={{ color: "#383434", }}
                                     rel="noopener noreferrer"
+                                    className="subText"
                                 >
-                                    &nbsp;hide
-                                </a> |
-                                <a
-                                    href={`https://news.ycombinator.com/item?id=${item}`}
-                                    target="_blank"
-                                    style={{ color: "#828282" }}
-                                    rel="noopener noreferrer"
-                                >
-                                    &nbsp;{comments_count} comments
-                                </a>
+                                    &nbsp;[hide]
+                            </a>
+
                             </td>
                         </tr>
+
                     </React.Fragment>
                 )
             )}
